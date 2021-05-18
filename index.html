@@ -9,25 +9,33 @@
   </head>
   <body>
       <!-- Quiz Start Button -->
-      <p id="demo">0</p>
-      <button onclick="startQuiz()">Start Quiz</button>
+
+     <div class="body">
+
+      <div class="row>"> <button onclick="startQuiz()">Start Quiz</button> <div>Time:<span  id="demo"> 0</span></div>
       
       <!-- here is the section the questions & answers will render  -->
-      <div id="question_area"></div>
+      <div id="question_area">
       <!-- quuiz questions-->
       <div id="questions"></div>
 
       <!-- quiz answers -->
       <div id="answers"></div>
-        
+    </div>
         <!-- the completed game section -->
-        <div id="game_done"></div>
+        <div class="hide" id="game_done">
+          <div >Score: <span id='score'></span></div>
           <!--render the final score  -->
       <div id="finalScore"></div>
           <!-- enter initials and submit them (button) -->
       <input id="userInitials"></input>
-      <button id="submit"></button>
+      <button id="submit">Submit</button>
+      <div>Recent Players: <span id='theInital'></span>   </div>
+      <div>  Score: <span id="theScore"></span></div>
+    </div>
 
+
+     </div>
 
         <!-- <div class="start_btn"><button>Start Quiz<button></div> -->
         

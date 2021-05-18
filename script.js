@@ -1,7 +1,7 @@
 // Create variables that will grab the DOM elemtns getElementID
 var myTimer;
 // determine the time based on the questions array
-var theTime = 16
+
 var questionSector = document.getElementById("question_area")
 var answers = document.getElementById("answers")
 var questions = document.getElementById("questions")
@@ -9,6 +9,10 @@ var questions = document.getElementById("questions")
 var starterPoint = 0
 var theClock = document.getElementById("demo")
 var endGame = document.getElementById("game_done")
+// grab the submit button from the html 
+var submitButton = document.getElementById("submit")
+// grab the input element 
+var inputArea = document.getElementById("userInitials")
 // create an array[] of quiz objects{} - questions and answers -
 var theQuestions = [
   {
@@ -27,12 +31,12 @@ var theQuestions = [
     theAnswer: "Cascading Style Sheet"
   },
   {
-    aQuestion: "What is A",
+    aQuestion: "What is API",
     choices: ["Application Programming Interface", "blah", "blah"] ,
     theAnswer: "Application Programming Interface"
   }
  ];
-
+ var theTime = theQuestions.length * 15;
 //  create a timer that ticks and substracts 
 function TicTok (){ 
   console.log("starting the clocker ticker")
@@ -113,13 +117,13 @@ function  userClicked (event) {
   // assure the user did not click the wrong answer & if the wrong answer was click
 console.log(event)
  console.log("this is the event choice:  " + event.target.getAttribute("value"))
-  if(theQuestions[starterPoint].theAnswer = event.target.getAttribute("value")){
+  if(theQuestions[starterPoint].theAnswer === event.target.getAttribute("value")){
     console.log("choice is correct")
   
   }else {
     console.log("what is the time now")
     // theTime = currentTimeLeft -5
-    theTime = theTime - 5;
+    theTime -= 15
   }
     // substract time 
   
@@ -138,10 +142,39 @@ console.log("test");
 }
 
 function QuizStopped () {
-  clearInterval(myTimer)
+  clearInterval(myTimer);
+  ScoreKeeper();
+  // remove the class hide from the score and end-game section so that it may render once the game is complete
+var gameSection = document.getElementById("game_done");
+gameSection.classList.remove("hide");
+
+
+  // hide the question section once the game is complete 
+questionSector.classList.add("hide")
 }
 
 
+// grab the score - which is the final time (time left) 
+function ScoreKeeper (){ 
+  // place the final score within the score sector of the html 
+  var theScore = document.getElementById("score");
+  // change the text content with the theTime variable
+  theScore.textContent = theTime;
+
+
+}
+function initalSubmit() {
+    // grab the value of the input element and remove the extra whitespace 
+    var inputContent = inputArea.value.trim();
+    console.log(inputContent);
+    var playerScore = document.getElementById("theScore");
+    var playerInital = document.getElementById("theInital");
+    playerInital.textContent = inputContent;
+    playerScore.textContent = theTime;
+}
+
+// giving the submit button functionality
+submitButton.onclick = initalSubmit;
   //  hide the question TILL start is clicked 
 
   //  Quiz render = complete

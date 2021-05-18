@@ -1,0 +1,22 @@
+/* styling that will automatically hide content  */
+.hide { 
+    visibility: hidden;
+}
+
+/* changes the conent area only */
+.body { 
+  margin-left: 230px;
+  margin-top: 124px;
+  border: solid black;
+  background-color: orange;
+}
+
+/* changes the entire body /page */
+body { 
+    background-color: blue;
+}
+
+/* styling ot submit button  */
+#submit { 
+    background-color: red;
+}
