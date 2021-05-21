@@ -3,16 +3,17 @@
     visibility: hidden;
 }
 
-/* changes the conent area only */
-.body { 
-  margin-left: 230px;
-  margin-top: 124px;
-  border: solid black;
-  background-color: orange;
+/* changes the content area only */
+.body {
+    margin-top: 124px;
+    border: solid black;
+    background-color: white;
 }
 
 /* changes the entire body /page */
 body { 
+    width: 35%;
+    margin: auto;
     background-color: blue;
 }
 

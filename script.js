@@ -61,7 +61,7 @@ function TicTok (){
 function startQuiz() {
   console.log("Starting quiz...")
     //  myTimer = setInterval(myClock, 1000);
-     var c = 15;
+    var c = 15;
 
     //  begin the count down 
     myTimer = setInterval(TicTok, 1000)
@@ -72,8 +72,8 @@ function startQuiz() {
     //      clearInterval(myTimer);
     //    }
     //  }
-     grabTheQuestions()
-   }
+    grabTheQuestions()
+  }
 
   //  render the questions above on to the DOM 
   // create a render Questions method (function)
@@ -96,7 +96,7 @@ currentQuizQuestion.choices.forEach(function(choice, i){
   theChoiceButton.setAttribute("class", "theChoice")
 
   // <button class="theChoice"> </button>
-  // each button willhave it's own value - the value will come from the choices availabe in the currentQuestion
+  // each button will have it's own value - the value will come from the choices availabe in the currentQuestion
   theChoiceButton.setAttribute("value", choice)
 
   // by using textContent actual content will be placed on the HTML 
@@ -116,7 +116,7 @@ answers.appendChild(theChoiceButton)
 function  userClicked (event) { 
   // assure the user did not click the wrong answer & if the wrong answer was click
 console.log(event)
- console.log("this is the event choice:  " + event.target.getAttribute("value"))
+console.log("this is the event choice:  " + event.target.getAttribute("value"))
   if(theQuestions[starterPoint].theAnswer === event.target.getAttribute("value")){
     console.log("choice is correct")
   
@@ -132,7 +132,7 @@ console.log(event)
     // move to the next question 
 starterPoint++;
 if(starterPoint === theQuestions.length){
- QuizStopped()
+  QuizStopped()
 }else {
   grabTheQuestions()
 }
@@ -180,17 +180,8 @@ submitButton.onclick = initalSubmit;
   //  Quiz render = complete
   // timer = complete
   // start button = renders questions = complete
-  // end game 
-  // calacute score 
-  // save intials 
-  // substract time if answer is wrong 
+  // end game = complete
+  // calacute score = complete
+  // save intials = complete
+  // substract time if answer is wrong = complete
   // move to next question if answer is correct = complete
-
-
-
-
-  // "a" == a : true
-  // "a" === a : false
-  // 1 === 1 : true
-  // "1" === 1 : false 
-  // "1" == 1 : true 
